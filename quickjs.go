@@ -5,11 +5,11 @@ package quickjs
 
 /*
 #cgo CFLAGS: -I./deps/include
-#cgo darwin,amd64 LDFLAGS: -L${SRCDIR}/deps/libs/darwin_amd64 -lquickjs -lm
-#cgo darwin,arm64 LDFLAGS: -L${SRCDIR}/deps/libs/darwin_arm64 -lquickjs -lm
-#cgo linux,amd64 LDFLAGS: -L${SRCDIR}/deps/libs/linux_amd64 -lquickjs -lm
-#cgo linux,arm64 LDFLAGS: -L${SRCDIR}/deps/libs/linux_arm64 -lquickjs -lm
-#cgo windows,amd64 LDFLAGS: -L${SRCDIR}/deps/libs/windows_amd64 -lquickjs -lm
-#cgo windows,386 LDFLAGS: -L${SRCDIR}/deps/libs/windows_386 -lquickjs -lm
+#cgo darwin,amd64 LDFLAGS:  -lquickjs -lm -ldl
+#cgo darwin,arm64 LDFLAGS:  -lquickjs -lm -ldl
+#cgo linux,amd64 LDFLAGS:  -lquickjs -lm -ldl
+#cgo linux,arm64 LDFLAGS:  -lquickjs -lm -ldl
+#cgo windows,amd64 LDFLAGS: -lquickjs -lm -ldl
+#cgo windows,386 LDFLAGS: -lquickjs -lm -ldl
 */
 import "C"
