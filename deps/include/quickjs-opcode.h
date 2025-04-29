@@ -110,6 +110,7 @@ DEF(         return, 1, 1, 0, none)
 DEF(   return_undef, 1, 0, 0, none)
 DEF(check_ctor_return, 1, 1, 2, none)
 DEF(     check_ctor, 1, 0, 0, none)
+DEF(      init_ctor, 1, 0, 1, none)
 DEF(    check_brand, 1, 2, 2, none) /* this_obj func -> this_obj func */
 DEF(      add_brand, 1, 2, 0, none) /* this_obj home_obj -> */
 DEF(   return_async, 1, 1, 0, none)
@@ -195,7 +196,6 @@ DEF(   with_put_var, 10, 2, 1, atom_label_u8)     /* must be in the same order a
 DEF(with_delete_var, 10, 1, 0, atom_label_u8)     /* must be in the same order as scope_xxx */
 DEF(  with_make_ref, 10, 1, 0, atom_label_u8)     /* must be in the same order as scope_xxx */
 DEF(   with_get_ref, 10, 1, 0, atom_label_u8)     /* must be in the same order as scope_xxx */
-DEF(with_get_ref_undef, 10, 1, 0, atom_label_u8)
 
 DEF(   make_loc_ref, 7, 0, 2, atom_u16)
 DEF(   make_arg_ref, 7, 0, 2, atom_u16)
@@ -207,8 +207,9 @@ DEF(   for_of_start, 1, 1, 3, none)
 DEF(for_await_of_start, 1, 1, 3, none)
 DEF(    for_in_next, 1, 1, 3, none)
 DEF(    for_of_next, 2, 3, 5, u8)
+DEF(for_await_of_next, 1, 3, 4, none) /* iter next catch_offset -> iter next catch_offset obj */
 DEF(iterator_check_object, 1, 1, 1, none)
-DEF(iterator_get_value_done, 1, 1, 2, none)
+DEF(iterator_get_value_done, 1, 2, 3, none) /* catch_offset obj -> catch_offset value done */
 DEF( iterator_close, 1, 3, 0, none)
 DEF(  iterator_next, 1, 4, 4, none)
 DEF(  iterator_call, 2, 4, 5, u8)
@@ -258,10 +259,7 @@ DEF(            xor, 1, 2, 1, none)
 DEF(             or, 1, 2, 1, none)
 DEF(is_undefined_or_null, 1, 1, 1, none)
 DEF(     private_in, 1, 2, 1, none)
-#ifdef CONFIG_BIGNUM
-DEF(      mul_pow10, 1, 2, 1, none)
-DEF(       math_mod, 1, 2, 1, none)
-#endif
+DEF(push_bigint_i32, 5, 0, 1, i32)
 /* must be the last non short and non temporary opcode */
 DEF(            nop, 1, 0, 0, none)
 

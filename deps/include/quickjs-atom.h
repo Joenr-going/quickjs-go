@@ -81,6 +81,7 @@ DEF(empty_string, "")
 DEF(length, "length")
 DEF(fileName, "fileName")
 DEF(lineNumber, "lineNumber")
+DEF(columnNumber, "columnNumber")
 DEF(message, "message")
 DEF(cause, "cause")
 DEF(errors, "errors")
@@ -172,13 +173,10 @@ DEF(status, "status")
 DEF(reason, "reason")
 DEF(globalThis, "globalThis")
 DEF(bigint, "bigint")
-#ifdef CONFIG_BIGNUM
-DEF(bigfloat, "bigfloat")
-DEF(bigdecimal, "bigdecimal")
-DEF(roundingMode, "roundingMode")
-DEF(maximumSignificantDigits, "maximumSignificantDigits")
-DEF(maximumFractionDigits, "maximumFractionDigits")
-#endif
+DEF(minus_zero, "-0")
+DEF(Infinity, "Infinity")
+DEF(minus_Infinity, "-Infinity")
+DEF(NaN, "NaN")
 /* the following 3 atoms are only used with CONFIG_ATOMICS */
 DEF(not_equal, "not-equal")
 DEF(timed_out, "timed-out")
@@ -217,13 +215,8 @@ DEF(Float32Array, "Float32Array")
 DEF(Float64Array, "Float64Array")
 DEF(DataView, "DataView")
 DEF(BigInt, "BigInt")
-#ifdef CONFIG_BIGNUM
-DEF(BigFloat, "BigFloat")
-DEF(BigFloatEnv, "BigFloatEnv")
-DEF(BigDecimal, "BigDecimal")
-DEF(OperatorSet, "OperatorSet")
-DEF(Operators, "Operators")
-#endif
+DEF(WeakRef, "WeakRef")
+DEF(FinalizationRegistry, "FinalizationRegistry")
 DEF(Map, "Map")
 DEF(Set, "Set") /* Map + 1 */
 DEF(WeakMap, "WeakMap") /* Map + 2 */
@@ -266,8 +259,5 @@ DEF(Symbol_hasInstance, "Symbol.hasInstance")
 DEF(Symbol_species, "Symbol.species")
 DEF(Symbol_unscopables, "Symbol.unscopables")
 DEF(Symbol_asyncIterator, "Symbol.asyncIterator")
-#ifdef CONFIG_BIGNUM
-DEF(Symbol_operatorSet, "Symbol.operatorSet")
-#endif
 
 #endif /* DEF */

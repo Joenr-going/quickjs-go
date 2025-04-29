@@ -321,9 +321,6 @@ func (ctx *Context) Eval(code string, opts ...EvalOption) (Value, error) {
 	if options.js_eval_flag_strict {
 		cFlag |= C.JS_EVAL_FLAG_STRICT
 	}
-	if options.js_eval_flag_strip {
-		cFlag |= C.JS_EVAL_FLAG_STRIP
-	}
 	if options.js_eval_flag_compile_only {
 		cFlag |= C.JS_EVAL_FLAG_COMPILE_ONLY
 	}
